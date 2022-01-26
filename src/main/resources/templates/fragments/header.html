@@ -8,23 +8,24 @@
 <body>
 <header th:fragment="header">
     <div class="topnav">
-        <a class="active" th:href="@{/}">Home</a>
+        <a class="active" th:href="@{/}">హోమ్ పేజీ</a>
         <span sec:authorize="hasRole('ROLE_USER')">
-        <a class="left" th:href="@{/createNewPost}">New Post</a>
+        <a class="left" th:href="@{/createNewPost}">కొత్త పోస్ట్ రాయండి</a>
+        <a class="left" th:href="@{/newwebsite}">కొత్త వెబ్సైటు</a>
         </span>
         <span sec:authorize="isAuthenticated()">
-        <a class="right" th:href="@{/logout}">Logout</a>
+        <a class="right" th:href="@{/logout}">లాగ్ అవుట్</a>
         </span>
         <span sec:authorize="isAuthenticated()">
-            <a class="right">Welcome <span sec:authentication="name">name?</span></a>
+            <a class="right">స్వాగతం<span sec:authentication="name">name?</span></a>
         </span>
         <span sec:authorize="!isAuthenticated()">
-        <a class="right" th:href="@{/login}">Log In</a>
-        <a class="right" th:href="@{/signup}">Sign Up</a>
+        <a class="right" th:href="@{/login}">లాగ్ ఇన్</a>
+        <a class="right" th:href="@{/signup}">సైన్ అప్</a>
         </span>
     </div>
     <div class="header">
-        <h2>Cool Blog Name</h2>
+        <h2>తెలుగు వార్తలు</h2>
     </div>
 </header>
 

@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
 import java.util.Collection;
@@ -20,7 +23,7 @@ public class HomeController {
         this.postService = postService;
     }
 
-    @GetMapping("/")
+    @RequestMapping(value = {"/newwebsite","/"}, method = RequestMethod.GET)
     public String displayAllPosts(Model model) {
 
         Collection<Post> posts = this.postService.getAll();
